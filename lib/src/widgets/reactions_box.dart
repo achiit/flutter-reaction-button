@@ -124,13 +124,18 @@ class _ReactionsBoxState<T> extends State<ReactionsBox<T>>
         }
 
         final double start = widget.direction == ReactionsBoxAlignment.ltr
-            ? widget.offset.dx - widthOverflow
-            : widget.offset.dx - _boxWidth + widthOverflow;
+            ? widget.offset.dx -
+                widthOverflow -
+                MediaQuery.of(context).size.width * 0.02
+            : widget.offset.dx -
+                _boxWidth +
+                widthOverflow -
+                MediaQuery.of(context).size.width * 0.07;
 
         final double top = widget.offset.dy -
             widget.boxPadding.vertical +
             (_shouldStartFromBottom ? 1 : -1) * widget.itemSize.height -
-            MediaQuery.of(context).size.height * 0.04;
+            MediaQuery.of(context).size.height * 0.09;
 
         return Stack(
           children: [
