@@ -135,7 +135,7 @@ class _ReactionsBoxState<T> extends State<ReactionsBox<T>>
         final double top = widget.offset.dy -
             widget.boxPadding.vertical +
             (_shouldStartFromBottom ? 1 : -1) * widget.itemSize.height -
-            MediaQuery.of(context).size.height * 0.17;
+            120;
 
         return Stack(
           children: [
